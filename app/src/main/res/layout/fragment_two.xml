@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".TwoFragment">
+
+    <Gallery
+        android:id="@+id/gallery1"
+        android:layout_width="fill_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#cfcfcf"
+        android:paddingTop="5dp"
+        android:scaleType="centerCrop"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/pic1" />
+
+</LinearLayout>

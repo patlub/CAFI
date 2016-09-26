@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">CAFI</string>
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_one_fragment">One fragment</string>
+    <string name="hello_two_fragment">Two Fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_three_fragment">Three Fragment</string>
+    <string name="hello_four_fragment">Live Stream Coming Soon</string>
+    <string name="hello_five_fragment">Five Fragment</string>
+    <string name="dev_text">For in the gospel is the righteousness of God revealed. A righteousness that is from faith to faith</string>
+    <string name="text_events">Events on Calender</string>
+    <string name="title_news_feed">News Feed</string>
+    <string name="text_news_feed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</string>
 </resources>
