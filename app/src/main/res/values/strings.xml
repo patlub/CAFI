@@ -15,4 +15,13 @@
     <string name="text_events">Events on Calender</string>
     <string name="title_news_feed">News Feed</string>
     <string name="text_news_feed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</string>
+    <string name="title_activity_contact">Contact</string>
+    <string name="action_contact">Contact</string>
+    <string name="live_text">Live Stream</string>
+    <string name="cmg_soon">Coming Soon</string>
+    <string name="read_more">read more</string>
+    <string name="daily_devotional">Daily Devotional</string>
+    <string name="today">Today</string>
+    <string name="verse">Romans 1:17 NIV</string>
+    <string name="main_image">main image</string>
 </resources>

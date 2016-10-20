@@ -9,4 +9,5 @@
     <color name="gold">#f0e026</color>
     <color name="blue">#0000FF</color>
     <color name="faint_grey">#edf4ef</color>
+    <color name="white">#ffffff</color>
 </resources>

@@ -11,19 +11,18 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ThreeFragment.OnFragmentInteractionListener} interface
+ * {@link ProductFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ThreeFragment#newInstance} factory method to
+ * Use the {@link ProductFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 
-public class TwoFragment extends Fragment{
+public class GalleryFragment extends Fragment{
 
     //the images to display
     Integer[] imageIDs = {
@@ -37,7 +36,7 @@ public class TwoFragment extends Fragment{
             R.drawable.pic8
     };
 
-    public TwoFragment() {
+    public GalleryFragment() {
         // Required empty public constructor
     }
 
@@ -49,7 +48,7 @@ public class TwoFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_two, container, false);
+        final View view = inflater.inflate(R.layout.fragment_gallery, container, false);
 
         // Note that Gallery view is deprecated in Android 4.1---
         Gallery gallery = (Gallery) view.findViewById(R.id.gallery1);

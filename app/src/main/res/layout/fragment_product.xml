@@ -1,0 +1,86 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:rowCount="3"
+        tools:context=".ProductFragment">
+
+        <TextView
+            style="@style/product_screen_title"
+            android:text="Available Sermon DVDs" />
+
+        <ImageView
+            android:id="@+id/product1"
+            style="@style/product_image"
+            android:contentDescription="Product 1"
+            android:src="@drawable/dvd1" />
+
+        <ImageView
+            android:id="@+id/product2"
+            style="@style/product_image"
+            android:contentDescription="Product 2"
+            android:src="@drawable/dvd2" />
+
+        <TextView
+            style="@style/dvd_title"
+            android:text="Youth Conference" />
+
+        <TextView
+            style="@style/dvd_title"
+            android:text="Radio Sermon" />
+
+
+        <ImageView
+            android:id="@+id/product3"
+            style="@style/product_image"
+            android:contentDescription="Product 2"
+            android:src="@drawable/healing" />
+
+        <ImageView
+            android:id="@+id/product4"
+            style="@style/product_image"
+            android:contentDescription="Product 2"
+            android:src="@drawable/revival" />
+
+        <TextView
+            style="@style/dvd_title"
+            android:text="Healing Meeting" />
+
+        <TextView
+            style="@style/dvd_title"
+            android:text="Revival Night" />
+
+        <ImageView
+            android:id="@+id/product5"
+            style="@style/product_image"
+            android:contentDescription="Product 2"
+            android:src="@drawable/service" />
+
+        <ImageView
+            android:id="@+id/product6"
+            style="@style/product_image"
+            android:contentDescription="Product 2"
+            android:src="@drawable/tvprog" />
+
+        <TextView
+            style="@style/dvd_title"
+            android:text="Youth Conference" />
+
+        <TextView
+            style="@style/dvd_title"
+            android:text="Radio Sermon" />
+
+        <TextView
+            style="@style/product_screen_title"
+            android:text="Book Store" />
+
+    </GridLayout>
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.example.patrick.cafi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private int[]tabIcons = {
+    private int[] tabIcons = {
             R.drawable.ic_home,
             R.drawable.ic_gallery,
             R.drawable.ic_products,
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
     }
+
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
@@ -63,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new MainFragment(), "Home");
-        adapter.addFragment(new TwoFragment(), "Gallery");
-        adapter.addFragment(new ThreeFragment(), "Products");
-        adapter.addFragment(new FourFragment(), "Live");
+        adapter.addFragment(new GalleryFragment(), "Gallery");
+        adapter.addFragment(new ProductFragment(), "Products");
+        adapter.addFragment(new LiveFragment(), "Live");
         viewPager.setAdapter(adapter);
     }
 
@@ -116,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_contact) {
+            Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
