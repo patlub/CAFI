@@ -24,4 +24,6 @@
     <string name="today">Today</string>
     <string name="verse">Romans 1:17 NIV</string>
     <string name="main_image">main image</string>
+    <string name="title_activity_devotional">Devotional</string>
+    <string name="title_activity_gallery">galleryActivity</string>
 </resources>

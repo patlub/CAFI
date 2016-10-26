@@ -1,13 +1,16 @@
 package com.example.patrick.cafi;
 
 import android.app.ProgressDialog;
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -19,28 +22,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ProductFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ProductFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * A placeholder fragment containing a simple view.
  */
-
-public class GalleryFragment extends Fragment{
-
-    //the images to display
+public class galleryActivityFragment extends Fragment {
 
     //Web api url
-    public static final String DATA_URL = "http://10.192.11.252/CAFI/gallery.php";
 
     //Tag values to read from json
     public static final String TAG_IMAGE_URL = "image";
     public static final String TAG_NAME = "name";
-    public static String[] urls;
+    public static String category;
+    public static String DATA_URL = null;
+
 
     //GridView Object
     private GridView gridView;
@@ -49,30 +46,31 @@ public class GalleryFragment extends Fragment{
     private ArrayList<String> images;
     private ArrayList<String> names;
 
-    public GalleryFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public galleryActivityFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+        Intent intent = getActivity().getIntent();
+        View rootView = inflater.inflate(R.layout.fragment_image_gallery, container, false);
 
-        gridView = (GridView) view.findViewById(R.id.gridView);
+        if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
+            category = intent.getStringExtra(intent.EXTRA_TEXT);
+        }
+        DATA_URL = "http://10.192.11.252/CAFI/images.php?category=" + category;
+
+        gridView = (GridView) rootView.findViewById(R.id.gridView);
 
         images = new ArrayList<>();
         names = new ArrayList<>();
 
         //Calling the getData method
         getData();
-        // Inflate the layout for this fragment
-        return view;
+
+        return rootView;
     }
+
     private void getData() {
         //Showing a progress dialog while our app fetches the data from url
         final ProgressDialog loading = ProgressDialog.show(getActivity(), "Please wait...", "Fetching data...", false, false);
@@ -89,25 +87,36 @@ public class GalleryFragment extends Fragment{
                         showGrid(response);
                     }
                 },
+
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        //You can handle error here if you want
+                        loading.dismiss();
+                        Toast.makeText(getActivity(), "Network Error", Toast.LENGTH_LONG).show();
                     }
-                }
-        );
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("category", category);
+                //returning parameter
+                return params;
+            }
+        };
 
         //Creating a request queue
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        //Adding our request to the queue
         requestQueue.add(jsonArrayRequest);
     }
+
 
     private void showGrid(JSONArray jsonArray) {
         //Looping through all the elements of json array
         for (int i = 0; i < jsonArray.length(); i++) {
             //Creating a json object of the current index
-            JSONObject obj;
+            JSONObject obj = null;
             try {
                 //getting json object from current index
                 obj = jsonArray.getJSONObject(i);
@@ -124,6 +133,5 @@ public class GalleryFragment extends Fragment{
 
         //Adding adapter to gridview
         gridView.setAdapter(gridViewAdapter);
-        urls = names.toArray(new String[names.size()]);
     }
 }

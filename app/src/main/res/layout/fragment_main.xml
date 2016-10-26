@@ -22,14 +22,14 @@
             android:paddingRight="12dp">
 
             <ImageView
-                android:contentDescription="@string/main_image"
                 android:id="@+id/dev_image"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:layout_marginBottom="25dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
+                android:contentDescription="@string/main_image"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_book" />
 
@@ -38,8 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/dev_image"
                 android:layout_toEndOf="@+id/dev_image"
+                android:layout_toRightOf="@+id/dev_image"
                 android:paddingTop="5dp"
                 android:text="@string/daily_devotional"
                 android:textColor="#7C8B88"
@@ -48,8 +48,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
                 android:paddingTop="5dp"
                 android:text="@string/today" />
@@ -59,8 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dev_heading"
-                android:layout_toRightOf="@+id/dev_image"
                 android:layout_toEndOf="@+id/dev_image"
+                android:layout_toRightOf="@+id/dev_image"
                 android:text="@string/verse"
                 android:textColor="#000000"
                 android:textSize="16sp"
@@ -76,6 +76,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/read_more"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dev_text"
@@ -118,9 +119,9 @@
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/sub_area"
                 android:fontFamily="sans-serif"
+                android:paddingEnd="10dp"
                 android:paddingLeft="10dp"
                 android:paddingStart="10dp"
-                android:paddingEnd="10dp"
                 android:text="@string/text_news_feed"
                 android:textSize="16sp" />
 
@@ -139,8 +140,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:paddingRight="10dp"
-                android:paddingEnd="10dp">
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp">
 
                 <ImageView
                     android:id="@+id/event1"
@@ -154,7 +155,7 @@
                     style="@style/event_name"
                     android:layout_below="@+id/event1"
                     android:layout_marginBottom="10dp"
-                    android:text="Business Breakfast" />
+                    android:text="Upcoming event" />
 
                 <ImageView
                     android:id="@+id/event2"
@@ -169,7 +170,7 @@
                     android:layout_below="@+id/event3"
                     android:layout_toEndOf="@+id/event1_text"
                     android:layout_toRightOf="@+id/event1_text"
-                    android:text="Men's Conference" />
+                    android:text="Men's Crusade" />
 
                 <ImageView
                     android:id="@+id/event3"
@@ -184,7 +185,7 @@
                     android:layout_below="@+id/event3"
                     android:layout_toEndOf="@+id/event2_text"
                     android:layout_toRightOf="@+id/event2_text"
-                    android:text="Youth Conference" />
+                    android:text="Youth Crusade" />
 
                 <ImageView
                     android:id="@+id/event4"
@@ -199,7 +200,7 @@
                     android:layout_below="@+id/event3"
                     android:layout_toEndOf="@+id/event3_text"
                     android:layout_toRightOf="@+id/event3_text"
-                    android:text="Worship night" />
+                    android:text="Worship Crusade" />
 
                 <ImageView
                     android:id="@+id/event5"
@@ -214,7 +215,7 @@
                     android:layout_below="@+id/event5"
                     android:layout_toEndOf="@+id/event4_text"
                     android:layout_toRightOf="@+id/event4_text"
-                    android:text="Healing Meeting" />
+                    android:text="Healing Crusade" />
             </RelativeLayout>
         </HorizontalScrollView>
     </LinearLayout>
